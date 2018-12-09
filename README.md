@@ -3,11 +3,12 @@
 
 Hashie is a multi functional tool written in python to deal with hashes.
 
-![2018-12-07_222811](https://user-images.githubusercontent.com/35377569/49664626-6dcd7100-fa78-11e8-89e5-5873474754a4.jpg)
+![2018-12-09_222901](https://user-images.githubusercontent.com/35377569/49700229-ec094f00-fc01-11e8-9b07-0b3625acb46f.jpg)
 
 ### Features
 - [x] Hash cracking
 - [x] Hash generation
+- [x] Hash My Files (calculate hashes of a given file in your system)
 - [x] Automatic hash type identification
 - [x] Supports MD5, SHA1, SHA256, SHA384, SHA512 etc...
 
