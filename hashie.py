@@ -23,10 +23,31 @@ banner = r'''
     [1] Hash Cracker
     [2] Hash Generator
     [3] Hash Identifier
-    [4] Update Hashie
-    [5] Quit
+    [4] Hash My Files
+    [5] Update Hashie
+    [6] Quit
 
 '''
+
+
+def HashMyFiles(f):
+    md5Hash = hashlib.md5()
+    sha1Hash = hashlib.sha1()
+    sha256Hash = hashlib.sha256()
+    sha384Hash = hashlib.sha384()
+    sha512Hash = hashlib.sha512()
+    with open(f, 'rb') as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            md5Hash.update(chunk)
+            sha1Hash.update(chunk)
+            sha256Hash.update(chunk)
+            sha384Hash.update(chunk)
+            sha512Hash.update(chunk)
+    print("MD5 - " + md5Hash.hexdigest())
+    print("SHA1 - " + sha1Hash.hexdigest())
+    print("SHA256 - " + sha256Hash.hexdigest())
+    print("SHA384 - " + sha384Hash.hexdigest())
+    print("SHA512 - " + sha512Hash.hexdigest())
 
 
 def connection(url='http://www.google.com/', timeout=5):
@@ -155,6 +176,8 @@ def choice():
         elif selection == '3':
             type()
         elif selection == '4':
+            HashMyFiles(input("Enter file name to genarate hashes - "))
+        elif selection == '5':
             print("Checking for updates...")
             update = requests.get(
                 "https://raw.githubusercontent.com/Sameera-Madhushan/Hashie/master/hashie.py").content.decode("UTF-8")
@@ -181,7 +204,7 @@ def choice():
                 print("Digger is Upto Date.")
                 exit()
 
-        elif selection == '5':
+        elif selection == '6':
             quit()
         else:
             omega = str(input("Sorry! Invalid selection. Do you wish to quit [yes/no] - ").lower())
