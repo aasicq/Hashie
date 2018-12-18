@@ -17,7 +17,7 @@ Hashie is a multi functional tool written in python to deal with hashes.
 
 `git clone https://github.com/Sameera-Madhushan/Hashie`
 
-[2] After downloading the program, enter the following command to navigate to the Digger directory and listing the contents
+[2] After downloading the program, enter the following command to navigate to the Hashie directory and listing the contents
 
 `cd Hashie && ls`
 
